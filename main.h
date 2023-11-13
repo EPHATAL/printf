@@ -64,7 +64,7 @@ int flags, int width, int precision, int size);
 int print_hexadecimal(va_list types, char buffer[],
 int flags, int width, int precision, int size);
 int print_hexa_upper(va_list types, char buffer[],
-int flags, int width int precision, int size);
+int flags, int width, int precision, int size);
 
 int print_hexa(va_list types, char map_to[],
 char buffer[], int flags, char flags_ch, int width, int precision, int size);
@@ -78,10 +78,10 @@ int print_pointer(va_list types, char buffer[],
 int flags, int width, int precision, int size);
 
 /*functions to handle other specifier*/
-int get_flags(const char *format, int *i);
-int get_width(const char *format, int *i, va_list list);
-int get_precision(const char *format, int *i, va_list list);
-int get_size(const char *format, int *i);
+int flags_p(const char *format, int *i);
+int print_width(const char *format, int *i, va_list list);
+int exact_p(const char *format, int *i, va_list list);
+int size_p(const char *format, int *i);
 
 /*Function to print string in reverse*/
 int print_reverse(va_list types, char buffer[],
